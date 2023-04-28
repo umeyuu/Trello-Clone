@@ -10,6 +10,7 @@ type Props = {
 
 export const AddTaskCardButton = ({taskCardsList, setTaskCardsList}: Props) => {
   const addTaskCard = () => {
+    if (taskCardsList.length >= 5) return;
     const taskCardId = uuid();
     // タスクカードを追加する
     setTaskCardsList([...taskCardsList, {

@@ -18,6 +18,9 @@ export const TaskCards = () => {
   ]);
 
   const onDragEnd = (result: any) => {
+    if (!result.destination) {
+      return;
+    }
     reorder(taskCardsList, result.source.index, result.destination.index);
     setTaskCardsList(taskCardsList);
   };

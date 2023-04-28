@@ -23,6 +23,9 @@ const reorder = (list : any, startIndex : any, endIndex : any) => {
 export const Tasks = ({taskList, setTaskList} :TasksProps) => {
 
   const onDragEnd = (result : any) => {
+    if (!result.destination) {
+      return;
+    }
     reorder(taskList, result.source.index, result.destination.index);
     setTaskList(taskList);
   };
